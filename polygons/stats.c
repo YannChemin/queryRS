@@ -43,15 +43,16 @@ int main( int argc, char *argv[] )
 			if(max<l[rowcol]) max=l[rowcol];
 		}
 	}
-	float average = sum/(float)count;
-	for(rowcol=0;rowcol<N;rowcol++){
-		if( l[rowcol] > 0 && l[rowcol] != nodata && l[rowcol] != nodata0 ){
-			sumdifsqr += l[rowcol];
+	if(count>2){
+		float average = sum/(float)count;
+		for(rowcol=0;rowcol<N;rowcol++){
+			if( l[rowcol] > 0 && l[rowcol] != nodata && l[rowcol] != nodata0 ){
+				sumdifsqr += l[rowcol];
+			}
 		}
-	}
-	stdev = sqrt(sumdifsqr/count);
-	if (max<100000.0)
+		stdev = sqrt(sumdifsqr/count);
 		printf("%s,%i,%f,%f,%f,%f,%f\n",argv[1],count,sum,min,max,average,stdev);
+	}
 	if( l != NULL ) free( l );
 	GDALClose(hD);
 	return(EXIT_SUCCESS);
