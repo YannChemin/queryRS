@@ -10,7 +10,7 @@ VI=$4
 cd $1
 for file in $(ls *$VI.tif)
 do
-	dateT=$(echo $file | sed 's/LC08......\(.*\)..T1-\(.*\)/\1/')
+	dateT=$(echo $file | sed 's/LC08......\(.*\)..T.-\(.*\)/\1/')
 	echo $dateT","$(gdallocationinfo -valonly -wgs84 $file $2 $3) 
 done
 
