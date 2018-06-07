@@ -4,10 +4,13 @@
 # $2 : Longitude coordinate of the Raster image (North-South)
 # $3 : Latitude coordinate of the Raster image (East-West)
 
+VI=$4
+
 #Process search for pixel values
 cd $1
-for file in $(ls *.tif)
+for file in $(ls *$VI.tif)
 do
-	echo $(gdallocationinfo -valonly -wgs84 $file $2 $3) &
+	dateT=$(echo $file | sed 's/LC08......\(.*\)..T1-\(.*\)/\1/')
+	echo $dateT","$(gdallocationinfo -valonly -wgs84 $file $2 $3) 
 done
 
