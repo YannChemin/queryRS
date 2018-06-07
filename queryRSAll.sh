@@ -8,6 +8,6 @@
 cd $1
 for file in $(ls *.tif)
 do
-	echo $(gdallocationinfo -valonly -wgs84 $1 $2 $3) &
+	echo $(gdallocationinfo -valonly -wgs84 $file $2 $3) &
 done
 
