@@ -6,6 +6,10 @@ VI=NDVI
 
 cd ~/RSDATA/OUT_L8_Ya
 
+
+#cleanup repetitive previous mess
+rm -f $cutline\_*.tif
+
 #cutline work with GDALWARP (parallel job)
 for file in *$VI.tif
 do
