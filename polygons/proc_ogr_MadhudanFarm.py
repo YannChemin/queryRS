@@ -7,15 +7,15 @@ from osgeo import ogr
 #---------------------------------
 #Define Feature corners
 #North
-point0=[73.043333,20.250019]
+point0=[73.043333,20.250226]
 #East
-point1=[73.043651,20.250000]
+point1=[73.043836,20.250226]
 #South
-point2=[73.043624,20.249771]
+point2=[73.043836,20.249771]
 #West
-point3=[73.043362,20.249741]
+point3=[73.043333,20.249771]
 #Closing Point (initial point)
-point4=[73.043333,20.250019]
+point4=[73.043333,20.250226]
 
 #Define a ring entity
 ring0 = ogr.Geometry(ogr.wkbLinearRing)
