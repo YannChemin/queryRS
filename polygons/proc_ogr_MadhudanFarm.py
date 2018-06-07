@@ -14,6 +14,8 @@ point1=[73.043651,20.250000]
 point2=[73.043624,20.249771]
 #West
 point3=[73.043362,20.249741]
+#Closing Point (initial point)
+point4=[73.043333,20.250019]
 
 #Define a ring entity
 ring0 = ogr.Geometry(ogr.wkbLinearRing)
@@ -23,6 +25,7 @@ ring0.AddPoint(point0[0],point0[1])
 ring0.AddPoint(point1[0],point1[1])
 ring0.AddPoint(point2[0],point2[1])
 ring0.AddPoint(point3[0],point3[1])
+ring0.AddPoint(point4[0],point4[1])
 
 #make the polygon0
 polygon0 = ogr.Geometry(ogr.wkbPolygon)
