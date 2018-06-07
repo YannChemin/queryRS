@@ -19,8 +19,12 @@ do
 done
 
 #stats extraction (OpenMP code, very fast !)
+rm -f $cutline.csv
 for file in $(ls $cutline\_*.tif)
 do
 	~/queryRS/trunk/polygons/stats $file 32768 >> $cutline.csv
 done
+
+#cleanup the mess
+rm -f $cutline\_*.tif
 
