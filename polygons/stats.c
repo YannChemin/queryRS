@@ -50,7 +50,7 @@ int main( int argc, char *argv[] )
 		}
 	}
 	stdev = sqrt(sumdifsqr/count);
-	if (count!=0)
+	if (max<100000.0)
 		printf("%s,%i,%f,%f,%f,%f,%f\n",argv[1],count,sum,min,max,average,stdev);
 	if( l != NULL ) free( l );
 	GDALClose(hD);
