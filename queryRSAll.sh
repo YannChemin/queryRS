@@ -11,6 +11,9 @@ cd $1
 for file in $(ls *$VI.tif)
 do
 	dateT=$(echo $file | sed 's/LC08......\(.*\)..T.-\(.*\)/\1/')
-	echo $dateT","$(gdallocationinfo -valonly -wgs84 $file $2 $3) 
+	if [ $(gdallocationinfo -valonly -wgs84 $file $2 $3) -ne "" ]
+	then
+		echo $dateT","$(gdallocationinfo -valonly -wgs84 $file $2 $3) 
+	fi
 done
 
