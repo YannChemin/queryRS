@@ -14,6 +14,6 @@
 # Pythonized form 
 import sys
 import subprocess
-csvVals=subprocess.call(['~/remotesensing/trunk/queryRS/trunk/queryRSAll.sh',"~/RSDATA/",sys.argv[1],sys.argv[2],sys.argv[3]])
+csvVals=subprocess.call(['~/remotesensing/queryRS/trunk/queryRSAll.sh',"~/RSDATA/",sys.argv[1],sys.argv[2],sys.argv[3]])
 print csvVals
 
