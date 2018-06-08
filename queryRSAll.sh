@@ -1,12 +1,22 @@
 #!/bin/bash
 
-# $1 : Source directory (with many Raster images)
+# Query A Single Pixel in all images
+#------------------------------------------------------------
+# Arguments: bash queryRSAll.sh $1 $2 $3 $4
+#------------------------------------------------------------
+# $1 : Source directory (with many Raster images i.e. ~/RSDATA/)
 # $2 : Longitude coordinate of the Raster image (North-South)
 # $3 : Latitude coordinate of the Raster image (East-West)
+# $4 : One of the Indices: NDVI NDWI LSWI NBR2
+#------------------------------------------------------------
+# Returns a set of pixel values in STDOUT
+# can be caught by Python subprocess()
+#------------------------------------------------------------
 
+# Identify the Index
 VI=$4
 
-#Process search for pixel values
+# Process search for pixel values
 cd $1
 for file in $(ls *$VI.tif)
 do
